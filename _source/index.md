@@ -7,6 +7,7 @@ numberOfRecentBooks: 10
 numberOfRecentCreators: 10
 ---
 
+Broadlist
 
 *Broadlist* is a collection of books which have been included in longlists, shortlists, and literary prizes from all over the world. Its purpose is to catelogue those lists and help readers find books to read. Read [more about its purpose](/purpose).
 
