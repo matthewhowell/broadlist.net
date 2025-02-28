@@ -1,0 +1,29 @@
+const contributor_links = Array.from(document.querySelectorAll('a')).filter( (i) => { if (i.href.includes('contributor')) return true; });
+
+let authorString = '';
+for (c of contributor_links) {
+	const authorChar = 'a';
+
+	if (c.innerText)
+	authorString += `	${authorChar}=${c.innerText.trim()}`;
+}
+
+const tableRows = Array.from(document.querySelectorAll('table tr')).filter((t) => { 
+	let tr = Array.from(t.childNodes)[0]; if (tr.innerText.trim() == 'EAN/UPC') return true;
+});
+
+const maybeisbn = Array.from(tableRows[0].childNodes)[1].innerText.trim();
+
+let isbnString = '	isbn=';
+if (maybeisbn.length == 13) {
+	isbnString += `${maybeisbn}`;
+}
+
+const copyToClipboard = (str) => {
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText)
+    return navigator.clipboard.writeText(str);
+  return Promise.reject('The Clipboard API is not available.');
+};
+
+console.log(`${authorString}${isbnString}`);
+copyToClipboard(`${authorString}${isbnString}`);

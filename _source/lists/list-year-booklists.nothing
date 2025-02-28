@@ -1,0 +1,10 @@
+---
+
+---
+<!-- pagination:
+  data: data.view_list_year_details
+  size: 1
+  alias: _i
+permalink: "{{ _i | getListYearPermalink }}booklist.txt"
+markdownTemplateEngine: false
+{%- readBooklist _i.list_slug, _i.year -%} -->

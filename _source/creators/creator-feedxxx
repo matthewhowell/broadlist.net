@@ -1,0 +1,39 @@
+---json
+{
+  "permalink": "/creators/feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "My Blog about Boats",
+    "description": "I am writing about my experiences as a naval navel-gazer.",
+    "language": "en",
+    "base": "https://broadlist.net/",
+    "author": {
+      "name": "Broadlist"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+{%- assign list_years_by_year = data.list_years | sort: 'created' | reverse %}
+{%- assign feed_last_updated = list_years_by_year | getNewestCollectionItemDate %}
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="{{ metadata.language or page.lang }}">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.description }}</subtitle>
+  <link href="{{ metadata.base}}/{{ permalink }}" rel="self" />
+  <link href="{{ metadata.base }}" />
+  <id>{{ metadata.base | addPathPrefixToFullUrl }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+  </author>
+  {%- for entry in data.view_creator_details | reverse %}
+  {%- capture relativeEntryUrl %}creators/creators/{{ creator.slug }}{% endcapture %}
+  {%- capture absoluteEntryUrl %}{{ metadata.base }}{{relativeEntryUrl}}{% endcapture %}
+  <entry>
+    <title>test</title>
+    <link href="{{ absoluteEntryUrl }}" />
+    <updated>{{ entry.created | dateToRfc3339 }}</updated>
+    <id>{{ absolutePostUrl }}</id>
+    <content type="html">{{ post.content | renderTransforms: post.data.page, metadata.base }}</content>
+  </entry>
+  {%- endfor %}
+</feed>
