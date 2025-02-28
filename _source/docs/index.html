@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <title>Docs</title>
+</head>
+
+<body>
+<header>
+
+<nav>
+<a href="/">Broadlist</a>
+
+<a href="/years">Years</a>
+
+<a href="/lists">Lists</a>
+</nav>
+</header>
+<h1 id="broadlist-docs">Broadlist Docs</h1>
+<ul>
+<li>List weights and</li>
+<li>Types of creators</li>
+<li>Booklist file format</li>
+</ul>
+<h2 id="broadscore">Broadscore</h2>
+<p>Broadscore is very simple, possibly silly, attempt to calculate a single, numeric representation of a book's critical reception.</p>
+<p>Broadlist exists to help readers find good books. Broadscore is an effort to reduce that search to an absolute minimal effort.</p>
+<h3 id="list-weights">List Weights</h3>
+<p>A <em>list weight</em> is the term we use to describe the importance (or the reputation) of a list.</p>
+<p>Every list that is added to Broadlist is assigned a <em>list weight</em> of one of the following:</p>
+<ul>
+<li>heavy</li>
+<li>normal</li>
+<li>light</li>
+</ul>
+<p>Each weight is assigned a value (3 for heavy, 2 for normal, 1 for light).</p>
+<h3 id="list-placements">List Placements</h3>
+<p>A <em>list placement</em> is the term we use to describe where a book sits within a list. Every book added to every list on <em>Broadlist</em> is given a list placement of exactly one of the following:</p>
+<ul>
+<li>winner</li>
+<li>shortlist</li>
+<li>longlist</li>
+<li>verylonglist</li>
+</ul>
+<p>There are some subjective editorial decisions that go into these categorizations, but in most circumstances the list placement is straightforward. Most lists will name a winner, and a shortlist, and a longlist.</p>
+<p>Each placement is assigned a value (16 for a winner, 4 for a shortlist, 2 for a longlist, 1 for a verylonglist). We arrived at these numbers both systematically and arbitrarily, through some trial and error.</p>
+<p>When these are not explicitly named, we usually follow these guidelines to assign a placement.</p>
+<p>If no winner is named we will generally not assign a <em>winner</em> placement.</p>
+<p>We will often infer a <em>shortlist</em> placement for lists that include 6 or fewer books.</p>
+<p>We will often infer a <em>longlist</em> placement for lists that include between 7 and 20 books.</p>
+<p>And we will often infer a <em>verylonglist</em> placement for lists that include more than 20 books.</p>
+<h3 id="calculating-broadscore">Calculating Broadscore</h3>
+<p>And that's really everything.</p>
+<p>Take a book. For each list that includes that book, multiply the <em>list weight</em> value by the <em>list placement</em> value. Add up those numbers and you've successfully calculated a <em>broadscore</em>.</p>
+<p>Every list that is added to Broadlist is assigned a <em>weight</em> which is meant to represent its importance.</p>
+<p>As an example: let's say I have blog (<em>Matthew's Book Blog</em>, perhaps) and each year I post a list of my  favorite books. The post is titled something like <em>Matthew's Favorite Books of 2024</em>.</p>
+<h4 id="example">Example</h4>
+<h3 id="notes">Notes</h3>
+<p>For our purposes here, a book has exactly one (1) list placement per list. Being assigned a <em>winner</em> placement does. Even though, logically, yes, the winner of a prize also made the longlist.</p>
+<p>The idea here is that the book earns its broadscore value using its single, best (highest value) <em>list placement</em>.</p>
+<h3 id="critiques">Critiques</h3>
+<p>Isn't this kind of made up and rather silly?</p>
+<p>Maybe. Broadscore is almost certainly not the most accurate way to determine if a book is good. There will be lots of great books with a <em>broadscore</em> of exactly 0.</p>
+<p>It aspires to be useful as a very fast way of determining if a book might be good.</p>
+<p>We think it's more valuable at the high end - capturing books that win multiple awards, make multiple shortlists, and are critically relavent for a particular year.</p>
+<p>A very blunt way to use broadscore:</p>
+<ul>
+<li>Broadscore of 0: do more research</li>
+<li>Broadscore of 50: probably pretty good, included in multiple lists</li>
+<li>Broadscore of 100: almost definitely an important book</li>
+</ul>
+
+<footer>
+<a href="/purpose">Purpose</a>
+</footer>
+</body>
+</html>
